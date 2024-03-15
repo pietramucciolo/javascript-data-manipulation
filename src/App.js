@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { carros } from './utils';
 
 function App() {
+  console.log(carros)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul
+        class="nav justify-content-center  "
+      >
+        {
+          carros.map((data) => {
+            return (
+              <div className="item-carro">
+                <span>{data.id}</span>
+                <span>{data.marca}</span>
+                <span>{data.modelo}</span>
+                <span>{data.cor}</span>
+                <span>{data.combustível}</span>
+                <span>{data.portas}</span>
+                <span>{data.cambio}</span>
+              </div>
+            )
+          })
+        }
+      </ul>
+
     </div>
   );
 }
